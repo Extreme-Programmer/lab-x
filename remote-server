@@ -15,7 +15,7 @@ echo "CMD  [ \"/usr/sbin/sshd\" , \"-D\" ]" >> Dockerfile
 docker build -t remote_server .
 docker run -d --name remote_server -it -p 58897:22 remote-server
 ssh -i ./id_rsa remote_user@localhost -p 58897
-
+rm -rf ./Dockerfile
 
 
 echo ""                                                                                                                      > userGuide.txt
@@ -44,3 +44,4 @@ echo "| ROOT             ROOT-USER |"                                           
 ecco "|----------------------------|"                                                                                       >> userGuide.txt
 echo "| REMOTE_USER      PASS1234  |"                                                                                       >> userGuide.txt
 ecco "+----------------------------+"                                                                                       >> userGuide.txt
+
