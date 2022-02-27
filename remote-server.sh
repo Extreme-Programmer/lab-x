@@ -37,11 +37,11 @@ echo "docker exec -it remote_server /bin/bash"                                  
 echo "echo 'remote_user ALL=(ALL)  ALL' >> /etc/sudoers"                                                                    >> userGuide.txt
 
 
-ecco "+----------------------------+"                                                                                       >> userGuide.txt
+echo "+----------------------------+"                                                                                       >> userGuide.txt
 echo "| USERNAME         PASSWORD  |"                                                                                       >> userGuide.txt
-ecco "|----------------------------|"                                                                                       >> userGuide.txt
+echo "|----------------------------|"                                                                                       >> userGuide.txt
 echo "| ROOT             ROOT-USER |"                                                                                       >> userGuide.txt
-ecco "|----------------------------|"                                                                                       >> userGuide.txt
+echo "|----------------------------|"                                                                                       >> userGuide.txt
 echo "| REMOTE_USER      PASS1234  |"                                                                                       >> userGuide.txt
-ecco "+----------------------------+"                                                                                       >> userGuide.txt
+echo "+----------------------------+"                                                                                       >> userGuide.txt
 
