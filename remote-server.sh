@@ -1,4 +1,6 @@
-yes '' | ssh-keygen -N '' -f ./remote-server  > /dev/null
+(ls ./remote-server-key && rm -rf ./remote-server-key) || echo "no action needed"
+(ls ./remote-server-key.pub && rm -rf ./remote-server-key.pub) || echo "no action needed"
+yes '' | ssh-keygen -N '' -f ./remote-server-key  > /dev/null
 ########filename:Dockerfile
 (ls Dockerfile && rm -rf Dockerfile) || echo "no action needed"
 echo "FROM ubuntu:latest"                                                                                                   >> Dockerfile
