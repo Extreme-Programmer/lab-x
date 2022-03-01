@@ -8,7 +8,7 @@ echo "RUN  mkdir -p /var/run/sshd"                                              
 echo "RUN  apt-get update && apt-get install -y openssh-server"                                                             >> Dockerfile
 echo "RUN  apt-get update && apt-get -y upgrade && apt-get install -y openjdk-8-jdk openssh-server sudo"                    >> Dockerfile
 echo "RUN  useradd -rm -d /home/remote_user -s /bin/bash remote_user && echo remote_user:pass1234 | chpasswd"               >> Dockerfile
-echo "RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers"                                                              >> Dockerfile
+echo "RUN echo 'remote_user ALL=(ALL)  ALL' >> /etc/sudoers"                                                                >> Dockerfile
 echo "RUN  echo 'root:root-user' | chpasswd #RUN  echo 'root-user' | passwd --stdin root"                                   >> Dockerfile
 echo "RUN  mkdir /home/remote_user/.ssh/ && chmod 700 /home/remote_user/.ssh"                                               >> Dockerfile
 echo "COPY remote-server-key.pub /home/remote_user/.ssh/authorized_keys"                                                    >> Dockerfile
