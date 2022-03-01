@@ -1,6 +1,6 @@
 yes '' | ssh-keygen -N '' -f ./remote-server  > /dev/null
 ########filename:Dockerfile
-echo ""                                                                                                                      > Dockerfile
+(ls Dockerfile && rm -rf Dockerfile) || echo "no action needed"
 echo "FROM ubuntu:latest"                                                                                                   >> Dockerfile
 echo "RUN  mkdir -p /var/run/sshd"                                                                                          >> Dockerfile
 echo "RUN  apt-get update && apt-get install -y openssh-server"                                                             >> Dockerfile
@@ -19,6 +19,7 @@ rm -rf ./Dockerfile
 
 
 echo ""                                                                                                                      > userGuide.txt
+(ls userGuide.txt && rm -rf userGuide.txt) || echo "no action needed"
 echo "########filename:userGuide.txt"                                                                                       >> userGuide.txt
 echo "# get started with new ui in opened docker container:"                                                                >> userGuide.txt
 echo "wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf"                           >> userGuide.txt
@@ -45,3 +46,15 @@ echo "|----------------------------|"                                           
 echo "| REMOTE_USER      PASS1234  |"                                                                                       >> userGuide.txt
 echo "+----------------------------+"                                                                                       >> userGuide.txt
 
+
+
+
+# #!/bin/bash
+# if [ -e x.txt ]
+# then
+#     echo "ok"
+# else
+#     echo "nok"
+# fi
+
+#(ls x.txt && echo yes) || echo no
