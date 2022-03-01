@@ -38,7 +38,7 @@ echo "| REMOTE_USER      PASS1234  |"                                           
 echo "+----------------------------+"                                                                                       >> userGuide.txt
 
 docker build -t remote_server .
-docker run -d --name remote_server -it -p 58897:22 remote-server
+docker run -d --name remote_server -it -p 58897:22 remote_server
 ssh -i ./remote-server-key remote_user@localhost -p 58897
 #rm -rf ./Dockerfile
 
