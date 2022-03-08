@@ -28,6 +28,7 @@ echo "chsh -s \$(which zsh)"                                                    
 echo "# to use sudo <command>:"                                                                                                              >> userGuide.txt
 echo "docker exec -it remote_server /bin/bash"                                                                                               >> userGuide.txt
 echo "echo 'remote_user ALL=(ALL)  ALL' >> /etc/sudoers"                                                                                     >> userGuide.txt
+echo "ssh -i ./remote-server-key remote_user@localhost -p 58897"                                                                             >> userGuide.txt
 echo "+----------------------------+"                                                                                                        >> userGuide.txt
 echo "| USERNAME         PASSWORD  |"                                                                                                        >> userGuide.txt
 echo "|----------------------------|"                                                                                                        >> userGuide.txt
@@ -35,7 +36,6 @@ echo "| ROOT             ROOT-USER |"                                           
 echo "|----------------------------|"                                                                                                        >> userGuide.txt
 echo "| REMOTE_USER      PASS1234  |"                                                                                                        >> userGuide.txt
 echo "+----------------------------+"                                                                                                        >> userGuide.txt
-
 docker build -t remote_server .
 docker run -d --name remote_server -it -p 58897:22 remote_server
 # ssh -i ./remote-server-key remote_user@localhost -p 58897
