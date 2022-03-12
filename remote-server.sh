@@ -7,7 +7,7 @@ yes '' | ssh-keygen -N '' -f ./remote-server-key  > /dev/null
 echo "FROM ubuntu:latest"                                                                                                   		                        >> Dockerfile
 echo "RUN  mkdir -p /var/run/sshd"                                                                                          		                        >> Dockerfile
 #echo "RUN  apt-get update && apt-get install -y openssh-server"                                                             		                        >> Dockerfile
-echo "RUN  apt-get update && apt-get -y upgrade && apt-get install -y openjdk-8-jdk openssh-server sudo git"                 		                        >> Dockerfile
+echo "RUN  apt-get update && apt-get -y upgrade && apt-get install -y openjdk-8-jdk openssh-server sudo git zsh vim"         		                        >> Dockerfile
 echo "RUN  useradd -rm -d /home/remote_user -s /bin/bash remote_user && echo remote_user:pass1234 | chpasswd && adduser remote_user sudo"               >> Dockerfile
 echo "RUN  echo 'root:root-user' | chpasswd #RUN  echo 'root-user' | passwd --stdin root"                                                               >> Dockerfile
 echo "RUN  mkdir /home/remote_user/.ssh/ && chmod 700 /home/remote_user/.ssh"                                                                           >> Dockerfile
