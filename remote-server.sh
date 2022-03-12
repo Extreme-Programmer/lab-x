@@ -24,6 +24,10 @@ echo "RUN  wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloL
 echo "RUN  wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh || true"                                               >> Dockerfile
 echo "RUN  git clone --depth=1 https://github.com/romkatv/powerlevel10k.git /home/remote_user/powerlevel10k"                                            >> Dockerfile
 echo "RUN  echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >> /home/remote_user/.zshrc"                                                           >> Dockerfile
+
+echo "RUN  cd ~/powerlevel10k"                                                                                                                          >> Dockerfile
+echo "RUN  exec zsh"                                                                                                                                    >> Dockerfile
+
 echo "RUN  chsh -s \$(which zsh)"
 
 echo "CMD  [ \"/usr/sbin/sshd\" , \"-D\" ]"                                                                                                             >> Dockerfile
