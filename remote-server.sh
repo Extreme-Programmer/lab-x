@@ -20,7 +20,8 @@ echo "RUN  wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloL
 echo "RUN  wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf -P /home/remote_user/.local/share/fonts/"         >> Dockerfile
 echo "RUN  wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf -P /home/remote_user/.local/share/fonts/"         >> Dockerfile
 echo "RUN  wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf -P /home/remote_user/.local/share/fonts/"   >> Dockerfile
-echo "RUN  sh -c '\$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)'"                                                        >> Dockerfile
+# echo "RUN  sh -c '\$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)'"                                                        >> Dockerfile
+echo "RUN  wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh || true"                                               >> Dockerfile
 echo "RUN  git clone --depth=1 https://github.com/romkatv/powerlevel10k.git /home/remote_user/powerlevel10k"                                            >> Dockerfile
 echo "RUN  echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >> /home/remote_user/.zshrc"                                                           >> Dockerfile
 echo "RUN  chsh -s \$(which zsh)"
