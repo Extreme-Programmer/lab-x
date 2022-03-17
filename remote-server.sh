@@ -32,21 +32,22 @@ echo "RUN  echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >> /home/remote
 #echo "RUN  cd ~/powerlevel10k"                                                                                                                         >> Dockerfile
 #echo "RUN  exec zsh"                                                                                                                                   >> Dockerfile
 echo "RUN  chsh -s \$(which zsh)"
-echo "CMD  [ \"/usr/sbin/sshd\" , \"-D\" ]"                                                                                                             >> Dockerfile
-echo "########filename:userGuide.txt"                                                                                                                   >> userGuide.txt
-echo "# get started with new ui in opened docker container:"                                                                                            >> userGuide.txt
-echo "wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf"                                                       >> userGuide.txt
-echo "wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf"                                                       >> userGuide.txt
-echo "wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf"                                                       >> userGuide.txt
-echo "wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf"                                                 >> userGuide.txt
-echo "sh -c '\$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)'"                                                             >> userGuide.txt
-echo "git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k"                                                                 >> userGuide.txt
-echo "echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc"                                                                                 >> userGuide.txt
-echo "chsh -s \$(which zsh)"                                                                                                                            >> userGuide.txt
-echo "# to use sudo <command>:"                                                                                                                         >> userGuide.txt
-echo "docker exec -it remote_server /bin/bash"                                                                                                          >> userGuide.txt
-echo "echo 'remote_user ALL=(ALL)  ALL' >> /etc/sudoers"                                                                                                >> userGuide.txt
+# echo "CMD  [ \"/usr/sbin/sshd\" , \"-D\" ]"                                                                                                             >> Dockerfile
+# echo "########filename:userGuide.txt"                                                                                                                   >> userGuide.txt
+# echo "# get started with new ui in opened docker container:"                                                                                            >> userGuide.txt
+# echo "wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf"                                                       >> userGuide.txt
+# echo "wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf"                                                       >> userGuide.txt
+# echo "wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf"                                                       >> userGuide.txt
+# echo "wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf"                                                 >> userGuide.txt
+# echo "sh -c '\$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)'"                                                             >> userGuide.txt
+# echo "git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k"                                                                 >> userGuide.txt
+# echo "echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc"                                                                                 >> userGuide.txt
+# echo "chsh -s \$(which zsh)"                                                                                                                            >> userGuide.txt
+# echo "# to use sudo <command>:"                                                                                                                         >> userGuide.txt
+# echo "docker exec -it remote_server /bin/bash"                                                                                                          >> userGuide.txt
+# echo "echo 'remote_user ALL=(ALL)  ALL' >> /etc/sudoers"                                                                                                >> userGuide.txt
 echo "ssh -i ./remote-server-key remote_user@localhost -p 58897"                                                                                        >> userGuide.txt
+echo "sudo chown remote_user ~/.zshrc"                                                                                                                  >> userGuide.txt
 echo "+----------------------------+"                                                                                                                   >> userGuide.txt
 echo "| USERNAME         PASSWORD  |"                                                                                                                   >> userGuide.txt
 echo "|----------------------------|"                                                                                                                   >> userGuide.txt
@@ -67,3 +68,4 @@ rm -rf ./Dockerfile
 #     echo "nok"
 # fi
 #(ls x.txt && echo yes) || echo no
+
