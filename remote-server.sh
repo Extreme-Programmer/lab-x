@@ -32,6 +32,7 @@ echo "RUN  echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >> /home/remote
 #echo "RUN  cd ~/powerlevel10k"                                                                                                                         >> Dockerfile
 #echo "RUN  exec zsh"                                                                                                                                   >> Dockerfile
 echo "RUN  chsh -s \$(which zsh)"
+echo "RUN  [\"zsh\"]"                                                                                                                                   >> Dockerfile
 # echo "CMD  [ \"/usr/sbin/sshd\" , \"-D\" ]"                                                                                                             >> Dockerfile
 # echo "########filename:userGuide.txt"                                                                                                                   >> userGuide.txt
 # echo "# get started with new ui in opened docker container:"                                                                                            >> userGuide.txt
@@ -69,3 +70,4 @@ rm -rf ./Dockerfile
 # fi
 #(ls x.txt && echo yes) || echo no
 
+#https://www.pluralsight.com/blog/it-ops/linux-file-permissions
