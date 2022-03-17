@@ -31,10 +31,8 @@ echo "RUN  git clone --depth=1 https://github.com/romkatv/powerlevel10k.git /hom
 echo "RUN  echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >> /home/remote_user/.zshrc"                                                           >> Dockerfile
 #echo "RUN  cd ~/powerlevel10k"                                                                                                                         >> Dockerfile
 #echo "RUN  exec zsh"                                                                                                                                   >> Dockerfile
-#echo "RUN  chsh -s \$(which zsh)"
-#echo "CMD  [ \"/usr/sbin/sshd\" , \"-D\" ]"                                                                                                            >> Dockerfile
-echo "CMD [\"zsh\"]"                                                                                                                                    >> Dockerfile
-
+echo "RUN  chsh -s \$(which zsh)"
+echo "CMD  [ \"/usr/sbin/sshd\" , \"-D\" ]"                                                                                                             >> Dockerfile
 echo "########filename:userGuide.txt"                                                                                                                   >> userGuide.txt
 echo "# get started with new ui in opened docker container:"                                                                                            >> userGuide.txt
 echo "wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf"                                                       >> userGuide.txt
