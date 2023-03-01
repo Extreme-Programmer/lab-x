@@ -1,0 +1,26 @@
+FROM ubuntu:latest
+
+# Set user and root password
+RUN useradd -ms /bin/bash myuser && \
+    echo 'myuser:password' | chpasswd && \
+    echo 'root:password' | chpasswd
+
+# Install required packages
+RUN apt-get update && \
+    apt-get install -y \
+        curl \
+        git \
+        python3 \
+        python3-pip \
+        tmux
+
+# Add some files to the image
+ADD myscript.py /home/myuser/myscript.py
+ADD config.cfg /etc/myconfig.cfg
+
+# Set the working directory and user
+WORKDIR /home/myuser
+USER myuser
+
+# Start a tmux session by default
+CMD ["tmux"]
